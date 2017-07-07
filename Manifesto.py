@@ -25,13 +25,13 @@ def clearConsole(wait) : #function to clear console on Linux or Windows
 
 def changeEnvironment() : 
     """Make changes to console environment"""
-    pass
+
+    import ctypes
 
 
 def cleanUp() :
     """Undo changes to console environment"""
     pass
-
 
 def timeDelay(amount) :
     """Add a delay to code execution"""
@@ -71,10 +71,13 @@ def readManifesto() :
         clearConsole(4)
         sys.exit()
 
+    cleanUp()
+    sys.exit()
 
 def main() : 
 
     clearConsole(0)
+    changeEnvironment()
     readManifesto()
 
     # TO DO LIST
