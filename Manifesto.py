@@ -1,5 +1,7 @@
 # Program to scroll a manifesto on the command line.
-# V0.01
+# V: 0.9.0
+
+import sys
 
 def clearConsole(wait) : #function to clear console on Linux or Windows
     """Clears console, with optional time delay.
@@ -33,19 +35,24 @@ def readManifesto() :
         with open(fileName, READ) as file :
             for line in file :
                 linesList = [(line)]
-                #print(linesList)
+                #print(linesList) #Print line used in initial testing
 
+                # Iterate over list of lines in the manifesto file and print each line.
                 for line in linesList :
                     print(line)
 
     except FileNotFoundError :
             print('\nFile not found...')
             print('Please create file "manifesto.txt')
-            # TODO
+            print('Exiting program...')
+            clearConsole(5)
+            sys.exit()
 
     except : 
         print('\nSorry there was an error')
-        # TODO
+        print('Exiting program...')
+        clearConsole(5)
+        sys.exit()
 
 
 def main() : 
