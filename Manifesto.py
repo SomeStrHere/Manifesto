@@ -50,6 +50,8 @@ def cleanUp() :
     """Undo changes to console environment"""
 
     print(Fore.RESET)
+    print(Back.RESET)
+    print(Style.NORMAL)
 
 def timeDelay(amount) :
     """Add a delay to code execution"""
