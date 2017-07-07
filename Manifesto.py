@@ -2,6 +2,7 @@
 # V: 0.9.0
 
 import sys
+import time
 
 def clearConsole(wait) : #function to clear console on Linux or Windows
     """Clears console, with optional time delay.
@@ -10,9 +11,8 @@ def clearConsole(wait) : #function to clear console on Linux or Windows
     console for Linux.
     """
 
-    import time
-    time.sleep(wait) 
     # produces a delay based on the argument given to clearConsole()
+    time.sleep(wait) 
     
     import os
 
@@ -32,9 +32,11 @@ def cleanUp() :
     """Undo changes to console environment"""
     pass
 
-def timeDelay() :
+
+def timeDelay(amount) :
     """Add a delay to code execution"""
-    pass
+
+    time.sleep(amount)
 
 
 def readManifesto() : 
@@ -54,6 +56,7 @@ def readManifesto() :
                 # Iterate over list of lines in the manifesto file and print each line.
                 for line in linesList :
                     print(line)
+                    timeDelay(1.65)
 
     except FileNotFoundError :
             print('\nFile not found...')
