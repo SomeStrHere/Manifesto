@@ -4,6 +4,12 @@
 import sys
 import time
 
+from colorama import init
+init()
+
+from colorama import Fore, Back, Style
+
+
 def clearConsole(wait) : #function to clear console on Linux or Windows
     """Clears console, with optional time delay.
 
@@ -26,22 +32,24 @@ def clearConsole(wait) : #function to clear console on Linux or Windows
 def changeEnvironment() : 
     """Make changes to console environment"""
 
-    pass
+    # Use colorama (needs installing via CLI) to change Windows console
+    # Moved code to import and initialize colorama outside of function so fore.RESET
+    # can be used if an error occurs.
 
-    #from colorama import init
-    #init()
-
-    #from colorama import Fore, Back, Style
-    #print(Fore.COLORNAME)
-    #print(Back.COLORNAME)
+    print(Fore.GREEN)
+    print(Back.BLACK)
+    print(Style.BRIGHT)
 
     #COLORNAME can be :
     #BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.
     #RESET will reset the color to the default.
+
+    return()
     
 def cleanUp() :
     """Undo changes to console environment"""
-    pass
+
+    print(Fore.RESET)
 
 def timeDelay(amount) :
     """Add a delay to code execution"""
@@ -61,7 +69,6 @@ def readManifesto() :
         with open(fileName, READ) as file :
             for line in file :
                 linesList = [(line)]
-                #print(linesList) #Print line used in initial testing
 
                 # Iterate over list of lines in the manifesto file and print each line.
                 for line in linesList :
@@ -69,6 +76,7 @@ def readManifesto() :
                     timeDelay(1.65)
 
     except FileNotFoundError :
+            cleanUp()
             print('\nFile not found...')
             print('Please create file "manifesto.txt')
             print('Exiting program...')
@@ -76,13 +84,17 @@ def readManifesto() :
             sys.exit()
 
     except : 
+        cleanUp()
         print('\nSorry there was an error')
         print('Exiting program...')
         clearConsole(4)
         sys.exit()
 
-    cleanUp()
+    finally :
+        cleanUp() # Ensures console text is returned to state before program execution began
+
     sys.exit()
+
 
 def main() : 
 
@@ -90,11 +102,6 @@ def main() :
     changeEnvironment()
     readManifesto()
 
-    # TO DO LIST
-    # Slow down the speed of the scrolling text, ideally line by line
-    # Change console text
-    # Create a program exit function to ensure changes to console variables are reset to as before
-    
 
 if __name__ == "__main__" :
     main()
