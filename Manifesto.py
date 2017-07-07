@@ -26,9 +26,19 @@ def clearConsole(wait) : #function to clear console on Linux or Windows
 def changeEnvironment() : 
     """Make changes to console environment"""
 
-    import ctypes
+    pass
 
+    #from colorama import init
+    #init()
 
+    #from colorama import Fore, Back, Style
+    #print(Fore.COLORNAME)
+    #print(Back.COLORNAME)
+
+    #COLORNAME can be :
+    #BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.
+    #RESET will reset the color to the default.
+    
 def cleanUp() :
     """Undo changes to console environment"""
     pass
