@@ -51,7 +51,7 @@ def readManifesto() :
     except : 
         print('\nSorry there was an error')
         print('Exiting program...')
-        clearConsole(5)
+        clearConsole(4)
         sys.exit()
 
 
@@ -60,6 +60,11 @@ def main() :
     clearConsole(0)
     readManifesto()
 
+    # TO DO LIST
+    # Slow down the speed of the scrolling text, ideally line by line
+    # Change console text
+    # Create a program exit function to ensure changes to console variables are reset to as before
+    
 
 if __name__ == "__main__" :
     main()
