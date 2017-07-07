@@ -1,5 +1,5 @@
 # Program to scroll a manifesto on the command line.
-# V: 0.9.0
+# V: 1.0.0
 
 import sys
 import time
@@ -43,6 +43,7 @@ def changeEnvironment() :
     #COLORNAME can be :
     #BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.
     #RESET will reset the color to the default.
+    #Style can be DIM, BRIGHT or NORMAL
 
     return()
     
