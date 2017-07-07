@@ -23,6 +23,20 @@ def clearConsole(wait) : #function to clear console on Linux or Windows
        os.system('clear') #clears console on Linux
 
 
+def changeEnvironment() : 
+    """Make changes to console environment"""
+    pass
+
+
+def cleanUp() :
+    """Undo changes to console environment"""
+    pass
+
+def timeDelay() :
+    """Add a delay to code execution"""
+    pass
+
+
 def readManifesto() : 
     """Open and read file manifesto.txt""" 
 
